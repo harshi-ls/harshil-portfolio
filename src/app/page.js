@@ -549,7 +549,7 @@ export default function MaxPortfolio() {
         </div>
       </motion.section>
       <footer className="border-t border-cyan-400/10 bg-black py-10">
-  <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-6 text-center"> gap-6">
+  <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-6 text-center">
 
     <div className="text-center w-full">
       <h3 className="text-2xl font-bold text-cyan-400">
