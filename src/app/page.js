@@ -2,7 +2,7 @@
 import { ReactTyped } from "react-typed";
 import Particles from "react-tsparticles";
 import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { loadSlim } from "tsparticles-slim";
 import { motion, useScroll } from "framer-motion";
 export default function MaxPortfolio() {
@@ -11,6 +11,25 @@ export default function MaxPortfolio() {
 };
   const [darkMode, setDarkMode] = useState(true);
   const { scrollYProgress } = useScroll();
+  const [currentTime, setCurrentTime] = useState("");
+  useEffect(() => {
+  const updateTime = () => {
+    const now = new Date();
+
+    const formatted = now.toLocaleString([], {
+      dateStyle: "full",
+      timeStyle: "medium",
+    });
+
+    setCurrentTime(formatted);
+  };
+
+  updateTime();
+
+  const interval = setInterval(updateTime, 1000);
+
+  return () => clearInterval(interval);
+}, []);
   const skills = [
     'IT Support',
     'System Administration',
@@ -184,6 +203,9 @@ export default function MaxPortfolio() {
     repeat={Infinity}
     className="text-2xl font-semibold text-cyan-400"
   />
+</div>
+<div className="mt-4 text-gray-400 text-lg">
+  {currentTime}
 </div>
             <p className="mt-6 text-lg text-gray-300 leading-relaxed max-w-2xl">
               Experienced IT professional with expertise in technical support,
