@@ -58,7 +58,7 @@ export default function MaxPortfolio() {
   style={{ scaleX: scrollYProgress }}
 />
   <nav className="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-cyan-400/10">
-  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-center">
 
     <h1 className="text-xl font-bold text-cyan-400">
       Harshil.dev
