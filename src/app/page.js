@@ -578,6 +578,86 @@ export default function MaxPortfolio() {
           </div>
         </div>
       </motion.section>
+      {/* Certifications */}
+
+<div className="mt-12 grid md:grid-cols-3 gap-8">
+
+  {/* Certificate 1 */}
+
+  <a
+    href="https://www.credly.com/earner/earned/badge/10bd65a3-332a-44ce-b873-f40542834c23"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition-all duration-300"
+  >
+    <div className="text-cyan-400 text-sm font-semibold mb-3">
+      The Linux Foundation
+    </div>
+
+    <h3 className="text-xl font-bold mb-4">
+      Scaling Cloud Native Applications with KEDA
+    </h3>
+
+    <p className="text-gray-400 text-sm">
+      Kubernetes • Cloud Native • Event-Driven Scaling
+    </p>
+
+    <div className="mt-6 text-cyan-400 font-semibold text-sm">
+      View Credential →
+    </div>
+  </a>
+
+  {/* Certificate 2 */}
+
+  <a
+    href="https://www.credly.com/earner/earned/badge/4fe2c7ba-9069-4de6-a719-0194f006c07c"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition-all duration-300"
+  >
+    <div className="text-cyan-400 text-sm font-semibold mb-3">
+      The Linux Foundation
+    </div>
+
+    <h3 className="text-xl font-bold mb-4">
+      Cybersecurity Essentials
+    </h3>
+
+    <p className="text-gray-400 text-sm">
+      Threat Analysis • Risk Management • Security Controls
+    </p>
+
+    <div className="mt-6 text-cyan-400 font-semibold text-sm">
+      View Credential →
+    </div>
+  </a>
+
+  {/* Certificate 3 */}
+
+  <a
+    href="https://www.credly.com/earner/earned/badge/601833ca-e089-4260-a204-c7b0f57e9ba8"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition-all duration-300"
+  >
+    <div className="text-cyan-400 text-sm font-semibold mb-3">
+      IBM
+    </div>
+
+    <h3 className="text-xl font-bold mb-4">
+      Cybersecurity Fundamentals
+    </h3>
+
+    <p className="text-gray-400 text-sm">
+      Networking Security • Authentication • Security Operations
+    </p>
+
+    <div className="mt-6 text-cyan-400 font-semibold text-sm">
+      View Credential →
+    </div>
+  </a>
+
+</div>
 
       {/* Projects Section */}
       <motion.section
@@ -723,6 +803,7 @@ export default function MaxPortfolio() {
     </div>
   </div>
 </section>
+
       {/* Contact Section */}
       <motion.section
   id="contact"
