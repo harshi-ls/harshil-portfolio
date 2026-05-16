@@ -5,6 +5,14 @@ import { TypeAnimation } from "react-type-animation";
 import { useState, useEffect } from "react";
 import { loadSlim } from "tsparticles-slim";
 import { motion, useScroll } from "framer-motion";
+import {
+  Shield,
+  Terminal,
+  Database,
+  Server,
+  Lock,
+  Cloud,
+} from "lucide-react";
 export default function MaxPortfolio() {
   const particlesInit = async (engine) => {
   await loadSlim(engine);
@@ -49,17 +57,20 @@ export default function MaxPortfolio() {
       description:
         'Interactive cybersecurity learning platform with live threat monitoring, dashboard analytics, and security simulation tools.',
       github: 'https://github.com/harshi-ls/cybershield_lab',
+      stack: ["Flutter", "Firebase", "Cybersecurity"],
     },
     {
       title: 'MindSparkle',
       description:
         'Motivational productivity application focused on user engagement, animations, and positive reinforcement experiences.',
       github: 'https://github.com/harshi-ls/mindsparkle',
+      stack: ["Flutter", "Animations", "UI/UX"],
     },
     {
       title: 'Enterprise IT Support Operations',
       description:
         'Provided enterprise-level IT support, incident management, troubleshooting, and infrastructure monitoring in fast-paced environments.',
+        stack: ["ServiceNow", "Office 365", "Infrastructure"],
     },
   ];
 
@@ -67,16 +78,32 @@ export default function MaxPortfolio() {
     
    <div
   className={`min-h-screen scroll-smooth font-sans transition-all duration-500 ${
+    
     darkMode
       ? "bg-black text-white"
       : "bg-gray-100 text-black"
+      
   }`}
+  
 >
+  {/* Global Cyber Glow */}
+
+<div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+
+  <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-3xl rounded-full animate-pulse"></div>
+
+  <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-3xl rounded-full animate-pulse"></div>
+
+  <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-cyan-400/5 blur-3xl rounded-full animate-pulse"></div>
+
+</div>
   <motion.div
   className="fixed top-0 left-0 right-0 h-1 bg-cyan-400 origin-left z-[100]"
   style={{ scaleX: scrollYProgress }}
 />
-  <nav className="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-cyan-400/10">
+  <nav className={`sticky top-0 z-50 backdrop-blur-md border-b border-cyan-400/10 ${
+  darkMode ? "bg-black/40" : "bg-white/70"
+}`}>
   <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-center">
 
     <h1 className="text-xl font-bold text-cyan-400">
@@ -109,10 +136,10 @@ export default function MaxPortfolio() {
   
   options={{
     background: {
-      color: {
-        value: "#000000",
-      },
-    },
+  color: {
+    value: darkMode ? "#000000" : "#f4f4f5",
+  },
+},
 
     fpsLimit: 120,
 
@@ -167,13 +194,50 @@ export default function MaxPortfolio() {
       {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-transparent" />
+        {/* Cyber Glow Lines */}
+
+<div className="absolute top-24 left-10 w-72 h-[2px] bg-cyan-400/40 blur-[1px] animate-pulse"></div>
+
+<div className="absolute top-40 left-40 w-40 h-[2px] bg-blue-400/40 blur-[1px] animate-pulse"></div>
+
+<div className="absolute top-64 left-20 w-96 h-[1px] bg-cyan-500/30 blur-[1px] animate-pulse"></div>
+
+<div className="absolute top-32 right-40 h-40 w-[2px] bg-cyan-400/30 blur-[1px] animate-pulse"></div>
+
+<div className="absolute bottom-32 left-1/3 w-80 h-[2px] bg-cyan-300/20 blur-[2px] animate-pulse"></div>
+{/* Floating Cyber Icons */}
+
+<div className="absolute top-24 left-16 text-cyan-400/10 animate-pulse">
+  <Terminal size={70} />
+</div>
+
+<div className="absolute top-52 left-1/3 text-cyan-300/10 animate-pulse">
+  <Shield size={60} />
+</div>
+
+<div className="absolute top-24 right-1/4 text-cyan-400/10 animate-pulse">
+  <Database size={70} />
+</div>
+
+<div className="absolute bottom-40 left-24 text-cyan-300/10 animate-pulse">
+  <Lock size={60} />
+</div>
+
+<div className="absolute bottom-52 right-32 text-cyan-400/10 animate-pulse">
+  <Server size={70} />
+</div>
+
+<div className="absolute top-1/2 right-1/3 text-cyan-300/10 animate-pulse">
+  <Cloud size={60} />
+</div>
+
 <div className="flex justify-end px-6 pt-6">
   <button
-    onClick={() => setDarkMode(!darkMode)}
-    className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-5 py-3 text-cyan-300 font-semibold hover:scale-105 transition-transform"
-  >
-    {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-  </button>
+  onClick={() => setDarkMode(!darkMode)}
+  className="px-6 py-3 rounded-2xl border border-cyan-400/30 bg-cyan-400/10 backdrop-blur-xl text-cyan-300 font-semibold hover:scale-105 transition-all duration-300"
+>
+  {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+</button>
 </div>
         <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -214,33 +278,19 @@ export default function MaxPortfolio() {
               complex technical challenges.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-0">
-              <button className="rounded-2xl bg-cyan-400 text-black px-6 py-3 font-semibold hover:scale-105 transition-transform">
-                View Projects
-              </button>
 
-              <a
-                href="/Harshil_Kanaka_Madathil_CV.pdf"
-                download
-                className="rounded-2xl border border-white/20 px-6 py-3 font-semibold hover:bg-white/10 transition"
-              >
-                Download CV
-              </a>
-            </div>
-          </div>
+              
+
+</div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 rounded-[2rem] bg-gradient-to-br from-cyan-400 to-blue-600 p-[2px] shadow-2xl shadow-cyan-500/20">
-              <div className="w-full h-full rounded-[2rem] pb-32 bg-zinc-950 flex flex-col items-center justify-center text-center p-8">
-                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-400/40 mb-6 shadow-2xl shadow-cyan-500/30">
-  <img
-    src="/profile.jpg"
-    alt="Harshil Kanaka Madathil"
-    className="w-full h-full object-cover object-top"
-  />
-</div>
-<div className="flex justify-center -mt-20 mb-8">
-  <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-400/40 shadow-2xl shadow-cyan-500/30">
+            <div className="relative w-80 h-[42rem] rounded-[2rem] bg-gradient-to-br from-cyan-400 to-blue-600 p-[2px] shadow-2xl shadow-cyan-500/20">
+              <div className={`w-full h-full rounded-[2rem] pb-32 flex flex-col items-center justify-center text-center p-8 ${
+  darkMode ? "bg-zinc-950" : "bg-white"
+}`}>
+                
+<div className="flex justify-center mt-12 lg:mt-0 mb-6">
+  <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-cyan-400/40 shadow-2xl shadow-cyan-500/30">
     <img
       src="/profile.jpg"
       alt="Harshil Kanaka Madathil"
@@ -253,7 +303,7 @@ export default function MaxPortfolio() {
                   Infrastructure • Security • Cloud • Support
                 </p>
 
-                <div className="mt-8 grid grid-cols-2 gap-4 w-full">
+                <div className="mt-6 grid grid-cols-2 gap-4 w-full">
                   <div className="rounded-2xl bg-white/5 p-4 border border-white/10">
                     <div className="text-2xl font-bold text-cyan-400">4+</div>
                     <div className="text-sm text-gray-400">Years IT Experience</div>
@@ -357,6 +407,41 @@ export default function MaxPortfolio() {
     social engineering techniques, security awareness, and user-risk
     interaction within modern digital systems.
   </p>
+  <div className="mt-6 flex flex-wrap gap-3">
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Threat Intelligence
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Security Awareness
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Risk Management
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Human Factors
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Social Engineering
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Cyber Defense
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Security Policies
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Threat Analysis
+  </span>
+
+</div>
   <a
   href="/Human_Factors_In_Cyber_Security_Presentation.pptx"
   download
@@ -366,24 +451,121 @@ export default function MaxPortfolio() {
 </a>
 </div>
             </div>
+            
 
             <div className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-8 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,255,0.25)] hover:-translate-y-2">
-              <h3 className="text-2xl font-bold text-cyan-400">
-                Bachelors in Computer Application
-              </h3>
+  
+  <h3 className="text-2xl font-bold text-cyan-400">
+    Bachelors in Computer Application
+  </h3>
 
-              <p className="text-gray-300 mt-4">Mangalore University</p>
-            </div>
+  <p className="text-gray-300 mt-4 font-semibold">
+    Mangalore University
+  </p>
+
+  <p className="text-gray-400 mt-4 leading-relaxed">
+    Built strong foundational knowledge in software development, database management, networking, operating systems, and IT infrastructure. Worked on academic projects involving application development, problem-solving, and system analysis while improving technical and analytical skills.
+  </p>
+  <ul className="mt-4 text-gray-400 space-y-3 text-sm leading-relaxed">
+  <li>• Application Development & Programming Concepts</li>
+  <li>• Database Management & System Design</li>
+  <li>• Networking Fundamentals & OS Concepts</li>
+  <li>• Academic Project Collaboration & Problem Solving</li>
+</ul>
+<div className="mt-6 flex flex-wrap gap-3">
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    C
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    C++
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Java
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Python
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    HTML
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    CSS
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    JavaScript
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    SQL
+  </span>
+
+</div>
+
+</div>
 
             <div className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-8 hover:border-cyan-400/40 transition-all duration-300">
-              <h3 className="text-2xl font-bold text-cyan-400">
-                Cybersecurity Labs & Training
-              </h3>
+  
+  <h3 className="text-2xl font-bold text-cyan-400">
+    Cybersecurity Labs & Training
+  </h3>
 
-              <p className="text-gray-300 mt-4">
-                Kali Linux • DVWA • Burp Suite • Nmap • Threat Monitoring
-              </p>
-            </div>
+  <p className="text-gray-300 mt-4 font-semibold">
+    Practical Security Learning & Threat Analysis
+  </p>
+
+  <p className="text-gray-400 mt-4 leading-relaxed">
+    Performed hands-on cybersecurity lab activities using Kali Linux, DVWA, Burp Suite, and Nmap. Practiced vulnerability assessment, web application testing, reconnaissance, threat monitoring, and basic penetration testing techniques within controlled lab environments.
+  </p>
+  <ul className="mt-4 text-gray-400 space-y-3 text-sm leading-relaxed">
+  <li>• Vulnerability Assessment & Reconnaissance</li>
+  <li>• Web Application Security Testing</li>
+  <li>• Threat Monitoring & Risk Analysis</li>
+  <li>• Practical Penetration Testing Fundamentals</li>
+</ul>
+<div className="mt-6 flex flex-wrap gap-3">
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Kali Linux
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Burp Suite
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Nmap
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    DVWA
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Vulnerability Testing
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Threat Monitoring
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Reconnaissance
+  </span>
+
+  <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+    Web Security
+  </span>
+
+</div>
+
+</div>
             <div className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-8 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,255,0.25)] hover:-translate-y-2">
   <h3 className="text-2xl font-bold text-cyan-400">
     Cybersecurity
@@ -443,9 +625,18 @@ export default function MaxPortfolio() {
                   </a>
                 )}
 
-                <button className="mt-8 rounded-xl border border-white/10 px-5 py-3 hover:bg-white/10 transition">
-                  Learn More
-                </button>
+                <div className="mt-8 flex flex-wrap gap-2 text-sm text-cyan-300">
+
+  {project.stack?.map((tech) => (
+    <span
+      key={tech}
+      className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20"
+    >
+      {tech}
+    </span>
+  ))}
+
+</div>
               </div>
             ))}
           </div>
@@ -471,7 +662,7 @@ export default function MaxPortfolio() {
                 <p className="text-cyan-400 mt-2">Amazon</p>
               </div>
 
-              <div className="text-gray-400">11/2024 - 02/2026</div>
+              <div className={`${darkMode ? "text-gray-400" : "text-gray-600"}`}>11/2024 - 02/2026</div>
             </div>
 
             <p className="text-gray-400 mt-6 leading-relaxed">
@@ -488,7 +679,7 @@ export default function MaxPortfolio() {
                 <p className="text-cyan-400 mt-2">Industrus Tech Pvt Ltd</p>
               </div>
 
-              <div className="text-gray-400">09/2020 - 05/2024</div>
+              <div className={`${darkMode ? "text-gray-400" : "text-gray-600"}`}>09/2020 - 05/2024</div>
             </div>
 
             <p className="text-gray-400 mt-6 leading-relaxed">
@@ -563,7 +754,11 @@ export default function MaxPortfolio() {
               href="https://www.linkedin.com/in/harshil-kanaka-madathil-8b098a268"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-2xl border border-white/10 px-8 py-4 font-bold hover:bg-white/10 transition"
+              className={`rounded-2xl px-8 py-4 font-bold transition-all duration-300 ${
+  darkMode
+    ? "border border-white/10 text-white hover:bg-white/10"
+    : "border border-cyan-500/30 text-cyan-700 hover:bg-cyan-100"
+}`}
             >
               Visit My LinkedIn Profile
             </a>
@@ -585,34 +780,54 @@ export default function MaxPortfolio() {
 
     <div className="flex items-center justify-center gap-6 text-sm">
 
-      <a
-        href="https://github.com/harshi-ls"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-cyan-400 transition"
-      >
-        GitHub
-      </a>
+  <a
+    href="https://github.com/harshi-ls"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`transition ${
+      darkMode
+        ? "text-white hover:text-cyan-400"
+        : "text-zinc-700 hover:text-cyan-600"
+    }`}
+  >
+    GitHub
+  </a>
 
-      <a
-        href="https://www.linkedin.com/in/harshil-kanaka-madathil-8b098a268"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-cyan-400 transition"
-      >
-        LinkedIn
-      </a>
+  <a
+    href="https://www.linkedin.com/in/harshil-kanaka-madathil-8b098a268"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`transition ${
+      darkMode
+        ? "text-white hover:text-cyan-400"
+        : "text-zinc-700 hover:text-cyan-600"
+    }`}
+  >
+    LinkedIn
+  </a>
 
-      <a
-        href="mailto:harshilkanakamadathil@gmail.com"
-        className="hover:text-cyan-400 transition"
-      >
-        Email
-      </a>
+  <a
+    href="mailto:harshilkanakamadathil@gmail.com"
+    className={`transition ${
+      darkMode
+        ? "text-white hover:text-cyan-400"
+        : "text-zinc-700 hover:text-cyan-600"
+    }`}
+  >
+    Email
+  </a>
 
-    </div>
+</div>
   </div>
-
+<div className="flex justify-center mt-8">
+  <a
+    href="/Harshil_Kanaka_Madathil_CV.pdf"
+    download
+    className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-8 py-4 font-bold text-cyan-300 hover:bg-cyan-400/20 transition-all duration-300"
+  >
+    Download CV
+  </a>
+</div>
   <div className="text-center text-gray-500 text-sm mt-8">
     © 2026 Harshil Kanaka Madathil. All rights reserved.
   </div>
